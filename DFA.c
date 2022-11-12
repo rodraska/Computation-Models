@@ -23,8 +23,6 @@ void    print_results(char state)
 
 void    DFA(char *str)
 {
-    int     len;
-    int     i;
     char    state;
 
     if (check_string(str) == 0)
@@ -32,44 +30,43 @@ void    DFA(char *str)
         print_results('F');
         return ;
     }
-    len = strlen(str);
     state = 'A';
-    i = -1;
-    while (++i < len)
+    while (*str)
     {
         if (state == 'A')
         {
-            if (str[i] == '0')
+            if (*str == '0')
                 state = 'B';
-            else if (str[i] == '1')
+            else if (*str == '1')
                 state = 'A';
         }
         else if (state == 'B')
         {
-            if (str[i] == '0')
+            if (*str == '0')
                 state = 'C';
-            else if (str[i] == '1')
+            else if (*str == '1')
                 state = 'A';
         }
         else if (state == 'C')
         {
-            if (str[i] == '0')
+            if (*str == '0')
                 state = 'C';
-            else if (str[i] == '1')
+            else if (*str == '1')
                 state = 'D';
         }
         else if (state == 'D')
         {
-            if (str[i] == '0')
+            if (*str == '0')
                 state = 'B';
-            else if (str[i] == '1')
+            else if (*str == '1')
                 state = 'E';
         }
         else if (state == 'E')
         {
-            if (str[i] == '0' || str[i] == '1')
+            if (*str == '0' || *str == '1')
                 state = 'E';
         }
+        str++;
     }
     print_results(state);
 }
