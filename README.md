@@ -1,1 +1,1 @@
-# Models of Computation
+# Computation Models
