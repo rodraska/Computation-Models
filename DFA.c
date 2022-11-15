@@ -1,17 +1,6 @@
-#include "DFA.h"
+#include "comp.h"
 
-int check_string(char *str)
-{
-    while (*str)
-    {
-        if (*str != '0' && *str != '1')
-            return (0);
-        str++;
-    }
-    return (1);
-}
-
-void    print_results(char state)
+void    print_results_DFA(char state)
 {
     if (state == 'E')
         printf("String Accepted\n");
@@ -27,7 +16,7 @@ void    DFA(char *str)
 
     if (check_string(str) == 0)
     {
-        print_results('F');
+        print_results_DFA('F');
         return ;
     }
     state = 'A';
@@ -68,7 +57,7 @@ void    DFA(char *str)
         }
         str++;
     }
-    print_results(state);
+    print_results_DFA(state);
 }
 
 int main(void)
@@ -76,6 +65,7 @@ int main(void)
     DFA("0011");
     DFA("10011101");
     DFA("0101");
+    DFA("");
     DFA("aabb");
     return (0);
 }
