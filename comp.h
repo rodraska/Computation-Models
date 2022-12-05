@@ -11,5 +11,7 @@ int     check_string(char *str);
 void    NFA(char *str);
 void    print_results_NFA(char *state);
 char    *Mealy(char *str);
+char    *Moore(char *str);
+int     check_string_ab(char *str);
 
 #endif

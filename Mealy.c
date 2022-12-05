@@ -57,6 +57,6 @@ char    *Mealy(char *str)
 
 int main(void)
 {
-    printf("%s\n", Mealy("1111"));
+    printf("%s\n", Mealy("1100100"));
     return (0);
 }
