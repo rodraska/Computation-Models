@@ -7,7 +7,7 @@ char    *Moore(char *str)
     char    state;
     char    *output;
 
-    if(check_string_ab(str) == 0)
+    if(check_string(str, "ab") == 0)
     {
         printf("Invalid String\n");
         return (NULL);

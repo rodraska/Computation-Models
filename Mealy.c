@@ -6,7 +6,7 @@ char    *Mealy(char *str)
     char    state;
     char    *output;
     
-    if(check_string(str) == 0)
+    if(check_string(str, "01") == 0)
     {
         printf("Invalid String\n");
         return (NULL);
@@ -33,8 +33,6 @@ char    *Mealy(char *str)
                 output[i] = '1';
                 state = 'B';
             }
-            i--;
-            str--;
         }
         else if (state == 'B')
         {
@@ -48,15 +46,15 @@ char    *Mealy(char *str)
                 output[i] = '0';
                 state = 'B';
             }
-            i--;
-            str--;
         }
+        i--;
+        str--;
     }
     return (output);
 }
 
 int main(void)
 {
-    printf("%s\n", Mealy("1100100"));
+    printf("%s\n", Mealy("1101010"));
     return (0);
 }

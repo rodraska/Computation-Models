@@ -14,7 +14,7 @@ void    DFA(char *str)
 {
     char    state;
 
-    if (check_string(str) == 0)
+    if (check_string(str, "01") == 0)
     {
         print_results_DFA('F');
         return ;

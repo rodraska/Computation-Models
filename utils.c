@@ -1,22 +1,20 @@
 #include "comp.h"
 
-int check_string(char *str)
+int check_string(char *str, char *inputs)
 {
-    while (*str)
-    {
-        if (*str != '0' && *str != '1')
-            return (0);
-        str++;
-    }
-    return (1);
-}
+    int i;
 
-int check_string_ab(char *str)
-{
     while (*str)
     {
-        if (*str != 'a' && *str != 'b')
-            return (0);
+        i = 0;
+        while (1)
+        {
+            if (*str == inputs[i])
+                break ;
+            else if (inputs[i] == '\0')
+                return (0);
+            i++;
+        }
         str++;
     }
     return (1);
